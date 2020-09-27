@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DDDDDD;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+    margin: 1rem 1rem;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.card{
+    background: #eee;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.btn{
+    color: white;
+    background-color: #333333;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+/* wrapper */
+.wrapper{
+    display: grid;
+    grid-gap: 2rem;
+}
+
+/* Nav-bar Section */
+.nav-bar ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    grid-gap: 2rem;
+}
+
+.nav-bar ul li a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    color: #222020;
+    font-weight: bold;
+}
+
+.nav-bar ul li a:hover{
+    background-color: #333333;
+    color: white;
+}
+
+/* Showcase Section */
+.showcase{
+    display: grid;
+    grid-template-areas: 
+    'text text plan-1'
+    'text text plan-2';
+    grid-gap: 2rem;
+}
+
+.showcase .plan-1{
+    grid-area: plan-1;
+}
+
+.showcase .plan-2{
+    grid-area: plan-2;
+}
+
+.showcase .text{
+    grid-area: text;
+    min-height: 500px;
+    background-image: linear-gradient(rgba(10, 10, 10, 0.637), rgba(31, 31, 31, 0.637)), url(./img/main.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    padding: 3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+}
+
+.showcase .text h1{
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.showcase .text p{
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.plan-1, .plan-2{
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    color:  #222020;
+}
+
+.plan-1 h1, .plan-2 h1{
+    font-size: 2.5rem;
+}
+
+
+
+/* Boxes Section */
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+}
+
+.box{
+    text-align: center;
+    padding: 1rem;
+    color: #222020;
+}
+
+.box h3{
+    padding: 1rem 0;
+}
+
+
+
+/* Info Section */
+.info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.info-text p{
+    padding: 1rem 0;
+}
+
+
+/* Gallery Section */
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 1rem;
+}
+
+.gallery img{
+    background-position: center center;
+    background-size: cover;
+}
+
+
+/* footer */
+footer{
+    background-color: #222020;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
+
+
+/* -----------------------------------------Media Queries-------------------------------------------*/
+/* ------------------------------------------768px--------------------------------------------------- */
+@media(max-width:768px){
+    /* Showcase Section */
+    .showcase .text h1{
+        font-size: 2rem;
+    }
+
+    .showcase .text p{
+        font-size: 1.2rem;
+    }
+
+    .plan-1 h1, .plan-2 h1{
+        font-size: 2rem;
+    }
+
+    /* Boxes Section */
+    .boxes{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 2rem;
+        align-items: center;
+    }
+}
+
+
+/* -------------------------------------------------540px------------------------------------------------ */
+@media(max-width:540px){
+
+    /* wrapper */
+    .wrapper{
+        grid-gap: 1rem;
+    }
+
+    /* Nav-bar Section */
+    .nav-bar ul{
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+    }
+
+    /* Showcase Section */
+    .showcase{
+        grid-template-areas: 
+        'text'
+        'plan-1'
+        'plan-2';
+        grid-gap: 1rem;
+    }
+
+    .showcase .text h1{
+        font-size: 1.5rem;
+    }
+
+    .showcase .text p{
+        font-size: 1rem;
+    }
+
+    /* Boxes */
+    .boxes{
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+
+    /* Info Section */
+    .info{
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }  
+}
